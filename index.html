@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="CSS/style.css"> 
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<title>Restaurant</title>
+	</head>
+	<body>
+		<section>
+			<h3>Galeria d'imatges</h3>
+			<div class="gallery">
+				<div class="image-container">
+					<img src="IMAGES_OPT/plat1.jpg" alt="Imatge plat de verdures">
+				</div>
+				<div class="image-container">
+					<img src="IMAGES_OPT/plat2.jpg" alt="Imatge plat despaguettis">
+				</div>
+				<div class="image-container">
+					<img src="IMAGES_OPT/plat3.jpg" alt="Imatge plat de salmó amb verdures">
+				</div>
+			</div>
+		</section>
+		<section class="container_img_resp">
+			<h3>Imatge responsiva</h3>
+			<picture>
+				<source srcset="IMAGES_OPT/img_responsive2_640.jpg" media="(max-width: 640px)">
+				<source srcset="IMAGES_OPT/img_responsive2_1024.jpg" media="(max-width: 1024px)">
+				<img src="IMAGES/img_responsive2.jpg" alt="Imatge responsiva">
+			</picture>
+		</section>
+		
+
+		<section class="container_animation">
+			<div class="css_div">
+				<span>Capa</span>
+			</div>
+		</section>
+		<section>
+			<h3>Video</h3>
+			<div class="container_video">
+				<video id="video" muted onscroll="playOnScroll()">
+					<source src="VIDEOS/video.mp4" type="video/mp4">
+					<source src="VIDEOS/video.mov" type="video/mov">
+				  </video>
+				  <div class="container_ico">
+					<span id="play" class="material-symbols-outlined" onclick="playVideo()">
+						play_arrow
+						</span>
+						<span id="pause" class="material-symbols-outlined" onclick="pauseVideo()">
+							pause
+						</span>
+				  </div>			
+				</div>
+		</section>
+
+
+		<script>
+
+			let video = document.getElementById('video');
+			let iconPlay = document.getElementById('play');
+			let iconPause = document.getElementById('pause');
+
+		function playVideo() {
+    	if (video.paused) {
+        video.play();
+		alert('El video s´està reproduint');
+    	}
+	}
+
+function pauseVideo() {
+    if (!video.paused) {
+        video.pause();
+		alert('El vídeo està parat');
+    }
+}
+
+	  function playOnScroll() {
+      let videoPosition = video.getBoundingClientRect().top;
+      if (videoPosition < window.innerHeight && videoPosition >= 0) {
+        if (video.paused) {
+          video.play();
+        }
+      } else {
+        if (!video.paused) {
+          video.pause();
+        }
+      }
+    }
+
+    window.addEventListener('scroll', playOnScroll);
+
+		</script>
+	</body>
+</html>

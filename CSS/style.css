@@ -1,0 +1,53 @@
+@keyframes rotate {
+    30%{
+        background-color: yellow;
+        transform: rotate(90deg);
+        height: 60px;
+    }
+
+    50%{
+        background-color:blue;
+        transform: rotate(180deg);
+        height: 80px;
+    }
+
+    70%{
+        background-color: green;
+        height: 80px;
+        width: 100px;
+    }
+
+    100%{
+        background-color:orange;
+        width: 50px;
+        height: 50px;
+        transform: rotate(360deg);
+    }
+}
+
+.gallery{
+    display: flex;
+    gap:20px;
+    justify-content: center;
+}
+
+
+img{
+    width: 100%;
+}
+
+.css_div{
+	width:50px;
+	height: 50px;
+	text-align: center;
+	line-height: 45px;
+	background-color:orange;
+    animation: rotate 10s;
+}
+
+.container_ico{
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    width: 1024px;
+}
